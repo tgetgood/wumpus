@@ -17,7 +17,7 @@ leaves you high and dry.
 You've got to catch the Wumpus and get that money, or you're as good as dead.
 
 The good news is that you managed to wound the Wumpus as he drove off, but the
-bad news is that now you have only one bullet left. When you find hum, you'll
+bad news is that now you have only one bullet left. When you find him, you'll
 need to charge in guns blazing (very briefly) or you're in trouble.
 
 You don't know your way around the city, the cops have set up roadblocks at

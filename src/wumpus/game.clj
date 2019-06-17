@@ -15,8 +15,34 @@
       (random-edge n)
       [a b])))
 
-(defn create-world [parameters]
-  (let [areas (range 0 (parameters :node-num))
-        roads (into #{}) 
-                    (map (fn [_] (random-edge (parameters :node-num))) 
-                    (range 0 (parameters :edge-num)))])))
+(defn edge-graph [edges]
+  (into {}
+        (map (fn [[k [v]]]
+               [k (into #{} v)]))
+        (group-by first edges)))
+
+(defn depth-first-search [nodes edges]
+  (let [graph (group-by first edges)]
+    (loop [visited #{}
+           components []]
+      (if (= nodes visited)
+        components
+        ()))))
+
+(defn connect-graph [areas roads]
+  (let [connected-areas (depth-first-search areas roads)
+        root-nodes (map (comp first first) connected-areas)
+        extra-edges (map vector root-nodes (drop 1 root-nodes))]
+    extra-edges
+    ))
+
+(defn create-world [params]
+  (let [n (:node-num params)
+        e (:edge-num params)
+        areas (into #{} (range n))
+        roads (into #{} (take e (repeatedly #(random-edge n))))
+        ]
+
+
+
+    ))

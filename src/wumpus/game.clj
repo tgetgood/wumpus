@@ -15,13 +15,17 @@
       (random-edge n)
       [a b])))
 
-(defn edge-graph [edges]
+(defn edge-graph
+  "Create a hash map of the edges, e.g. {1 #{4 3 2}, 2 #{3}, 3 #{4}}"
+  [edges]
   (into {}
-        (map (fn [[k [v]]]
-               [k (into #{} v)]))
-        (group-by first edges)))
+        (map (fn [[k v]]
+               [k (into #{} (map second v))])
+             (group-by first edges)))
 
-(defn depth-first-search [nodes edges]
+(defn depth-first-search
+  "Create a list of list of edges by islands, e.g. [[[1 2] [2 3]] [[5 6] [6 7]]]"
+  [nodes edges]
   (let [graph (group-by first edges)]
     (loop [visited #{}
            components []]
@@ -42,7 +46,4 @@
         areas (into #{} (range n))
         roads (into #{} (take e (repeatedly #(random-edge n))))
         ]
-
-
-
     ))

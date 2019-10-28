@@ -1,5 +1,7 @@
 # Grand Theft Wumpus
 
+This has been moved to maria.cloud [here](https://www.maria.cloud/gist/6e74d955a1a14a6792369deecb012489). Now you no longer need to have any tools installed nor editor configured.
+
 We're going to go through chapter 8 of Conrad Barski's wonderful and eccentric
 Land of Lisp.
 
